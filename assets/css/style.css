@@ -40,7 +40,20 @@ section p {
     line-height: 0.1;
 }
 
-#start-button {
+/* #start-button {
+    background-color: var(--button-color);
+    border: none;
+    color: white;
+    padding: 1px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 4px;
+} */
+
+.btn {
     background-color: var(--button-color);
     border: none;
     color: white;
@@ -52,4 +65,25 @@ section p {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 4px;
+}
+
+
+
+.end-screen{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score-initials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.score-initials form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header id="header-elements">
+        <a class="high-scores" href="./highscores.html">View Highscores</a>
+        <p>Time: 0</p>
+    </header>
+
+    <main class="page-content" id="page-content">
+        <!-- Beginning Screen -->
+        <section class="end-screen">
+            <h1 class="end-title">All done!</h1>
+            <p>Your final score is <span>0</span></p>
+            <div class="score-initials">
+                <p>Enter initials: </p>
+
+                <form id="task-form">
+                    <div class="form-group">
+                        <input type="text" name="initials" placeholder="" />
+                    </div>
+        
+        
+                    <div class="form-group">    
+                        <button class="btn" id="save-initials" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
