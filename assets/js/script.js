@@ -9,6 +9,69 @@ var highScores = document.querySelector("#high-scores");
 //var tasksCompletedEl = document.querySelector("#tasks-completed");
 //var tasks = [];
 
+//The questions[] array has a length of 5 and contains the questions in the quiz stored as attributes. We will loop through the array to get the questions on the page
+var questions = [
+    {
+        text: "Commonly used data types DO Not Include:",
+        answers: [
+            "strings",
+            "booleans",
+            "alerts",
+            "numbers"
+        ],
+        right: "alerts"
+
+    },
+    
+    {
+        text: "The condition in an if/else statement is enclosed with ______.",
+        answers: [
+            "quotes",
+            "curly brackets",
+            "parenthesis",
+            "square brackets"
+        ],
+        right: "parenthesis"
+
+    },
+
+    {
+        text: "Arrays in JavaScript can be used to store ______.",
+        answers: [
+            "numbers and strings",
+            "other arrays",
+            "booleans",
+            "all of the above"
+        ],
+        right: "all of the above"
+
+    },
+
+    {
+        text: "String values must be enclosed within ______ when being assigned to variables",
+        answers: [
+            "commas",
+            "curly brackets",
+            "quotes",
+            "parenthesis"
+        ],
+        right: "quotes"
+
+    },
+
+    {
+        text: "A very useful tool used during development and debugging for printing content to the debugger is",
+        answers: [
+            "JavaScript",
+            "terminal/bash",
+            "for loops",
+            "console.log"
+        ],
+        right: "console.log"
+
+    }
+
+];
 
 //document.addEventListener('load', function() {}) -> load function when page loads
 
@@ -38,70 +101,3 @@ var countdown = function () {
 
 // function for 
 
-//The questions[] array has a length of 5 and contains the questions in the quiz stored as attributes. We will loop through the array to get the questions on the page
-var questions = [
-    {
-        text: "Commonly used data types DO Not Include:",
-        answers: [
-            "strings",
-            "booleans",
-            "alerts",
-            "numbers"
-        ],
-        right: "alerts"
-
-    },
-    
-    
-    {
-        text: "The condition in an if/else statement is enclosed with ______.",
-        answers: [
-            "quotes",
-            "curly brackets",
-            "parenthesis",
-            "square brackets"
-        ],
-        right: "parenthesis"
-
-    },
-
-
-    {
-        text: "Arrays in JavaScript can be used to store ______.",
-        answers: [
-            "numbers and strings",
-            "other arrays",
-            "booleans",
-            "all of the above"
-        ],
-        right: "all of the above"
-
-    },
-
-
-    {
-        text: "String values must be enclosed within ______ when being assigned to variables",
-        answers: [
-            "commas",
-            "curly brackets",
-            "quotes",
-            "parenthesis"
-        ],
-        right: "quotes"
-
-    },
-
-
-    {
-        text: "A very useful tool used during development and debugging for printing content to the debugger is",
-        answers: [
-            "JavaScript",
-            "terminal/bash",
-            "for loops",
-            "console.log"
-        ],
-        right: "console.log"
-
-    }
-
-];
