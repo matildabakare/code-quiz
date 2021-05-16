@@ -21,6 +21,7 @@ header {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .screen-content {
@@ -65,6 +66,31 @@ section p {
     font-size: 16px;
     margin: 4px 2px;
     border-radius: 4px;
+}
+
+
+
+.answer-options {
+    background-color: var(--button-color);
+    border: none;
+    color: white;
+    padding: 1px 1px 1px 1px;
+    /* 15px 32px; */
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    line-height: 2;
+}
+
+
+#footer-content {
+    color: gray;
+    border-top: 1px solid;
+    border-color: gray;
+    font-size: 35px;
 }
 
 

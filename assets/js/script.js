@@ -1,12 +1,40 @@
-var timerCountdowE1 = document.querySelector("#time-countdown");
-var highScores = document.querySelector("#high-scores");
+var counter = 0;
+var timerCountdownE1 = document.querySelector("#time-countdown");
+var highScoresE1 = document.querySelector("#high-scores");
+var questionE1 = document.querySelector("#question");
+var questionListE1 = document.querySelector("#question-list");
+var pageContentEl = document.querySelector("#page-content");
+var footerContentE1 = document.querySelector("#footer-content");
+var startButtonE1 = document.querySelector("#start-button");
+var startScreenE1 = document.querySelector("#start-screen");
+var quizQuestionsE1 = document.querySelector("#quiz-questions");
+var quizResultsE1 = document.querySelector("#quiz-results");
+
+
+var timer = 75;
 
 //var taskIdCounter = 0;
-//var formEl = document.querySelector("#task-form");
-//var tasksToDoEl = document.querySelector("#tasks-to-do");
-//var pageContentEl = document.querySelector("#page-content");
-//var tasksInProgressEl = document.querySelector("#tasks-in-progress");
-//var tasksCompletedEl = document.querySelector("#tasks-completed");
+
+//Create answer option 1
+var answerOptionOneEl = document.createElement("li");
+answerOptionOneEl.className = "answer-options";
+questionListE1.appendChild(answerOptionOneEl);
+
+//Create answer option 2
+var answerOptionTwoEl = document.createElement("li");
+answerOptionTwoEl.className = "answer-options";
+questionListE1.appendChild(answerOptionTwoEl);
+
+//Create answer option 3
+var answerOptionThreeEl = document.createElement("li");
+answerOptionThreeEl.className = "answer-options";
+questionListE1.appendChild(answerOptionThreeEl);
+
+//Create answer option 4
+var answerOptionFourEl = document.createElement("li");
+answerOptionFourEl.className = "answer-options";
+questionListE1.appendChild(answerOptionFourEl);
+
 //var tasks = [];
 
 //The questions[] array has a length of 5 and contains the questions in the quiz stored as attributes. We will loop through the array to get the questions on the page
@@ -73,29 +101,94 @@ var questions = [
 
 ];
 
-//document.addEventListener('load', function() {}) -> load function when page loads
 
+//document.addEventListener('load', function() {}) -> load function when page loads
+//listens for 
+
+startScreenE1.style.display = "block";
+quizQuestionsE1.style.display = "none";
+quizResultsE1.style.display = "none";
+
+//startButtonE1.addEventListener("click", enterQuiz);
+document.getElementById("start-button").addEventListener("click", enterQuiz);
+
+var enterQuiz = function (){
+    startScreenE1.style.display = "none";
+    quizQuestionsE1.style.display = "block";
+    quizResultsE1.style.display = "block";
+    getQuizEl();
+}
+
+// Function for pulling questions
+var getQuizEl = function() {
+    //Start countdown
+    countdown();
+  
+    
+    //set question text
+    questionE1.textContent = questions[counter].text;
+    
+    //Create list item
+    answerOptionOneEl.textContent = questions[counter].answers[0];
+    answerOptionTwoEl.textContent = questions[counter].answers[1];
+    answerOptionThreeEl.textContent = questions[counter].answers[2];
+    answerOptionFourEl.textContent = questions[counter].answers[3];
+
+  
+
+    //Call function to save the task to local storage
+    //saveTasks();
+
+    pageContentEl.addEventListener("click", selectedAnswer);
+
+    
+};
+
+var selectedAnswer = function(event) {
+     // get target element from event
+     var targetEl = event.target;
+
+    if (targetEl.textContent === questions[counter].right) {
+        console.log("right");
+        footerContentE1.textContent = "Correct!";
+    }
+    else {
+        console.log("wrong");
+        footerContentE1.textContent = "Wrong!";
+    }
+
+    // increase task counter for next unique id
+    counter++;
+
+    getQuizEl();
+}
+
+
+// timer function
 var countdown = function () {
-    var timer = 75;
+   
+    console.log("start button selected");
+    // var timer = 75;
 
     // setInterval() will call a function to be executed every 1000 milliseconds
     var timeInterval = window.setInterval(function() {
         // As long as the timer is greater than 0
         if (timer > 0) {
-          // Set the `textContent` of `timerEl` to show the remaining seconds
-          timerCountdowE1.textContent = 'Time: ' + timer;
-          // Decrement `timeLeft` by 1
-          timer--;
+        // Set the `textContent` of `timerEl` to show the remaining seconds
+        timerCountdownE1.textContent = 'Time: ' + timer;
+        // Decrement `timeLeft` by 1
+        timer--;
     
         } else {
-          // Once timer gets to 0, stop timr aend game
-          timerCountdowE1.textContent = 'Time: ' + timer;
-          // Use `clearInterval() to stop the timer
-          clearInterval(timeInterval);
-          // Call the allDone() function
-          displayMessage();
+        // Once timer gets to 0, stop timr aend game
+        timerCountdowE1.textContent = 'Time: ' + timer;
+        // Use `clearInterval() to stop the timer
+        clearInterval(timeInterval);
+        // Call the allDone() function
+        displayMessage();
         }
-      }, 1000);
+    }, 1000);
+      
 }
 
 

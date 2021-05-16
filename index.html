@@ -16,18 +16,30 @@
 
     <main class="page-content" id="page-content">
         <!-- Beginning Screen -->
-        <section class="start-screen">
+        <section class="start-screen" id="start-screen">
             <h1 class="screen-title">Coding Quiz Challenge</h1>
 
-            <div class="screen-content"> 
+            <div class="screen-content" id="initial-content"> 
                 <p>Try to answer the following code-related questions within the time limit</p>
                 <p>Keep in mind that incorrect answers will penalize your score/time</p>
                 <p>by ten seconds</p>
             </div>
             <br>
 
-            <a class="btn" id="start-button" href="./quiz.html">Start Quiz</a>
+           <!-- <a class="btn" id="start-button" href="./quiz.html">Start Quiz</a> -->
+            <button class="btn" id="start-button" type="button">Start Quiz</button>
             
+        </section>
+
+        <!-- Display the quiz questions -->
+        <section class="quiz-questions" id="quiz-questions">
+            <h1 class="question" id="question">Insert Question</h1>
+            <ol class="question-list" id="question-list"></ol>
+        </section>
+
+        <!-- Display if answer was correct or wrong -->
+        <section class="quiz-results" id="quiz-results">
+            <p id="footer-content"></p>
         </section>
     </main>
 
