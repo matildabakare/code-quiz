@@ -16,13 +16,7 @@ header {
     text-decoration: none;
 }
 
-.start-screen{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .screen-content {
     text-align: center;
@@ -34,7 +28,7 @@ header {
 .page-content h1 {
     font-weight: bold;
     font-size: 35px;
-    line-height: 0.1;
+    /* line-height: 0.1; */
 }
 
 section p {
@@ -81,15 +75,15 @@ section p {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    width: 10%;
+    width: 20%;
     line-height: 2;
 }
 
 
 #footer-content {
     color: gray;
-    border-top: 1px solid;
-    border-color: gray;
+    /* border-top: 1px solid; */
+    /* border-color: gray; */
     font-size: 35px;
 }
 
@@ -112,4 +106,13 @@ section p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.start-screen{
+    display: flex;
+    /*flex-wrap: wrap;*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }

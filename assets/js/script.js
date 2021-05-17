@@ -1,20 +1,27 @@
 var counter = 0;
+var timer = 75;
 var timerCountdownE1 = document.querySelector("#time-countdown");
 var highScoresE1 = document.querySelector("#high-scores");
 var questionE1 = document.querySelector("#question");
 var questionListE1 = document.querySelector("#question-list");
 var pageContentEl = document.querySelector("#page-content");
 var footerContentE1 = document.querySelector("#footer-content");
+var headerContentE1 = document.querySelector("#header-elements");
 var startButtonE1 = document.querySelector("#start-button");
 var startScreenE1 = document.querySelector("#start-screen");
 var quizQuestionsE1 = document.querySelector("#quiz-questions");
 var quizResultsE1 = document.querySelector("#quiz-results");
+var endScreenE1 = document.querySelector(".end-screen");
 
 
-var timer = 75;
-
-//var taskIdCounter = 0;
-
+startButtonE1.addEventListener("click", function(){
+    startScreenE1.style.display = "none";
+    quizQuestionsE1.style.display = "block";
+    quizResultsE1.style.display = "block";
+    // headerContentE1.style.display = "block";
+    // endScreenE1.style.display = "none";
+    getQuizEl();
+})
 //Create answer option 1
 var answerOptionOneEl = document.createElement("li");
 answerOptionOneEl.className = "answer-options";
@@ -108,16 +115,12 @@ var questions = [
 startScreenE1.style.display = "block";
 quizQuestionsE1.style.display = "none";
 quizResultsE1.style.display = "none";
+// headerContentE1.style.display = "block";
+// endScreenE1.style.display = "none";
 
-//startButtonE1.addEventListener("click", enterQuiz);
-document.getElementById("start-button").addEventListener("click", enterQuiz);
-
-var enterQuiz = function (){
-    startScreenE1.style.display = "none";
-    quizQuestionsE1.style.display = "block";
-    quizResultsE1.style.display = "block";
-    getQuizEl();
-}
+// function exampleFunction () {
+//     console.log("")
+// }
 
 // Function for pulling questions
 var getQuizEl = function() {
@@ -158,6 +161,16 @@ var selectedAnswer = function(event) {
     }
 
     // increase task counter for next unique id
+
+    if (counter === 4) {
+        // startScreenE1.style.display = "none";
+        // quizQuestionsE1.style.display = "none";
+        // quizResultsE1.style.display = "none";
+        // headerContentE1.style.display = "none";
+        // endScreenE1.style.display = "block";
+        window.location.href("../../score.html");
+        return;
+    }
     counter++;
 
     getQuizEl();
@@ -167,9 +180,6 @@ var selectedAnswer = function(event) {
 // timer function
 var countdown = function () {
    
-    console.log("start button selected");
-    // var timer = 75;
-
     // setInterval() will call a function to be executed every 1000 milliseconds
     var timeInterval = window.setInterval(function() {
         // As long as the timer is greater than 0
@@ -192,5 +202,4 @@ var countdown = function () {
 }
 
 
-// function for 
 
